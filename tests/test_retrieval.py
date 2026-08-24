@@ -1,6 +1,7 @@
 from app.embeddings.embedding_model import EmbeddingModel
 from app.vectorstore.chroma_store import ChromaStore
 from app.retrieval.retriever import Retriever
+from app.embeddings.embedding_generator import EmbeddingModel
 
 # Modelo de embeddings
 embedding_model = EmbeddingModel()
@@ -22,21 +23,22 @@ query = "¿Cuándo se contruyó la casa del alabado?"
 results = retriever.retrieve(query)
 
 # Mostrar resultados
-for i, document in enumerate(
-    results["documents"][0]
+print("=" * 70)
+
+print(
+    f"Resultados recuperados: {len(results)}"
+)
+
+print("=" * 70)
+
+for i, chunk in enumerate(
+    results,
+    start=1
 ):
-
-    print("=" * 70)
-    print(f"Resultado {i + 1}")
+    print(f"\nResultado {i}")
+    print("ID:", chunk.id)
+    print("Distancia:", chunk.distance)
+    print("Metadata:", chunk.metadata)
+    print("Texto:")
+    print(chunk.text)
     print("-" * 70)
-    print(document)
-    print()
-    print(
-        "Distancia:",
-        results["distances"][0][i]
-    )
-
-    print(
-        "Metadata:",
-        results["metadatas"][0][i]
-    )

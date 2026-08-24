@@ -1,5 +1,7 @@
 from app.embeddings.embedding_model import EmbeddingModel
 from app.vectorstore.chroma_store import ChromaStore
+from tests.test_generation import RetrievedChunk
+from app.models.retrieved_chunk import RetrievedChunk
 
 
 class Retriever:
@@ -26,4 +28,23 @@ class Retriever:
             top_k=self.top_k
         )
 
-        return results
+        retrieved_chunks = []
+
+        for i in range(len(results["ids"][0])):
+
+            retrieved_chunk = RetrievedChunk(
+
+                id=results["ids"][0][i],
+
+                text=results["documents"][0][i],
+
+                distance=results["distances"][0][i],
+
+                metadata=results["metadatas"][0][i]
+            )
+
+            retrieved_chunks.append(
+                retrieved_chunk
+            )
+
+        return retrieved_chunks

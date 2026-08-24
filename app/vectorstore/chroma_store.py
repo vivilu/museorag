@@ -42,7 +42,7 @@ class ChromaStore:
                 "chunk_id": chunk.id
             })
 
-        self.collection.add(
+        self.collection.upsert(
             ids=ids,
             embeddings=embeddings,
             documents=documents,

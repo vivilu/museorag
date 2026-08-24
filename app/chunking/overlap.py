@@ -1,6 +1,6 @@
 class Overlap:
     """
-        Return last sentence fragment ad join with the new chunk.
+        Return last sentence fragment and join with the new chunk.
     """
 
     def __init__(
