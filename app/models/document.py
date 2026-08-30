@@ -8,30 +8,19 @@ class Document:
     """
     Types of atributes from document.
     """
-
     filename: str
-
     path: str
-
     extension: str
-
     text: str = ""
-
     pages: int = 0
-
     chunks: list[Chunk] = field(default_factory=list)
 
-    """
-    language: str = ""
+    # Texto separado por página
+    page_texts: list[str] = field(
+        default_factory=list
+    )
 
-    metadata: dict = None
-
-   
-    embeddings = []
-  
-
-
-    
-
-    metadata: dict = field(default_factory=dict)
-    """
+    # Chunks generados
+    chunks: list[Chunk] = field(
+        default_factory=list
+    )

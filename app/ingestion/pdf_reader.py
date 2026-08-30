@@ -12,10 +12,19 @@ class PDFReader:
         with pymupdf.open(pdf_path) as doc:
 
             for page in doc:
+                
+                page_text = page.get_text(
+                    "text"
+                ).strip()
+
                 pages_text.append(
-                    page.get_text("text").strip()
+                    page_text
                 )
 
         text = "\n".join(pages_text)
 
-        return text, len(pages_text)
+        return (
+            text,
+            len(pages_text),
+            pages_text
+        )

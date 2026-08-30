@@ -25,12 +25,10 @@ class PromptBuilder:
         prompt = f"""
 Eres un asistente virtual de un museo.
 
-Responde la pregunta del usuario utilizando
-únicamente la información proporcionada en el
+Responde la pregunta del usuario utilizando únicamente la información proporcionada en el
 contexto.
 
-Si la información necesaria para responder
-no se encuentra en el contexto, indica que
+Si la información necesaria para responder no se encuentra en el contexto, indica que
 no dispones de información suficiente.
 
 No inventes información.

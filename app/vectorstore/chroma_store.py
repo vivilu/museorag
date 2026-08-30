@@ -42,6 +42,24 @@ class ChromaStore:
                 "chunk_id": chunk.id
             })
 
+
+            print("\n" + "=" * 70)
+            print("CHROMA STORE")
+            print("Documento:", document.filename)
+            print("IDs:", len(ids))
+            print("Embeddings:", len(embeddings))
+            print("Documents:", len(documents))
+            print("Metadatas:", len(metadatas))
+
+            if embeddings:
+                print(
+                    "Primer embedding:",
+                    type(embeddings[0]),
+                    len(embeddings[0])
+                )
+
+            print("=" * 70)
+
         self.collection.upsert(
             ids=ids,
             embeddings=embeddings,

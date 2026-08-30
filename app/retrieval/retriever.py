@@ -10,14 +10,18 @@ class Retriever:
         self,
         embedding_model,
         vector_store,
-        top_k=5
+        top_k=7
     ):
 
         self.embedding_model = embedding_model
         self.vector_store = vector_store
         self.top_k = top_k
 
-    def retrieve(self, query):
+    def retrieve(self, query, top_k=None):
+
+
+        if top_k is None:
+            top_k = self.top_k
 
         query_embedding = self.embedding_model.encode(
             query
@@ -25,7 +29,7 @@ class Retriever:
 
         results = self.vector_store.search(
             query_embedding=query_embedding,
-            top_k=self.top_k
+            top_k=top_k
         )
 
         retrieved_chunks = []
@@ -33,13 +37,9 @@ class Retriever:
         for i in range(len(results["ids"][0])):
 
             retrieved_chunk = RetrievedChunk(
-
                 id=results["ids"][0][i],
-
                 text=results["documents"][0][i],
-
                 distance=results["distances"][0][i],
-
                 metadata=results["metadatas"][0][i]
             )
 

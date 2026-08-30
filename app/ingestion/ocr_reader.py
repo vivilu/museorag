@@ -3,7 +3,8 @@ import easyocr
 from PIL import Image
 import numpy as np
 
-class OCRReader:    
+
+class OCRReader:
 
     def __init__(self):
 
@@ -12,13 +13,14 @@ class OCRReader:
             gpu=False
         )
 
-    def read(self, pdf_path: str) -> str:
+    def read(self, pdf_path: str):
 
-        document_text = []
+        pages_text = []
 
         with pymupdf.open(pdf_path) as doc:
 
             for page in doc:
+
                 pix = page.get_pixmap(dpi=300)
 
                 image = Image.frombytes(
@@ -34,10 +36,19 @@ class OCRReader:
                 for _, text, confidence in results:
 
                     if confidence >= 0.60:
+
                         page_text.append(text)
 
-                document_text.append(
+                # Guardar el texto de esta página
+                pages_text.append(
                     " ".join(page_text)
                 )
 
-        return "\n".join(document_text)
+        # Unir todas las páginas
+        text = "\n".join(pages_text)
+
+        return (
+            text,
+            len(pages_text),
+            pages_text
+        )

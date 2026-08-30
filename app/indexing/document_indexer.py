@@ -54,6 +54,37 @@ class DocumentIndexer:
                 document
             )
 
+            print("\n" + "=" * 70)
+
+            print("DOCUMENTO:", document.filename)
+            print("PÁGINAS:", document.pages)
+            print("PAGE_TEXTS:", len(document.page_texts))
+            print("CHUNKS:", len(document.chunks))
+
+            if document.chunks:
+
+                print(
+                    "PRIMER CHUNK:",
+                    document.chunks[0].text[:100]
+                )
+
+                print(
+                    "PRIMER CHUNK PAGE:",
+                    document.chunks[0].page
+                )
+
+                print(
+                    "PRIMER EMBEDDING TYPE:",
+                    type(document.chunks[0].embedding)
+                )
+
+                print(
+                    "PRIMER EMBEDDING LENGTH:",
+                    len(document.chunks[0].embedding)
+                )
+
+            print("=" * 70)
+
             # 4. Vector Store
             self.vector_store.add_document(
                 document

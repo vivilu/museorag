@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "question": "¿En qué periodo se desarrolló la cultura Valdivia?",
+        "expected_evidence": [
+            {
+                "filename": "Educación - Tutoriales - Venus de Valdivia.pdf",
+                "page": 2
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "¿Cuándo se presenta la exhibición de tesoros del Monasterio de Santa Clara?",
+        "expected_evidence": [
+            {
+                "filename": "exposiciones.pdf",
+                "page": 2
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "¿Qué técnicas y materiales se usaron para fabricar los objetos de la colección?",
+        "expected_evidence": [
+            {
+                "filename": "Conoce - Colección Permanente - Mundos - Materiales y Tecnicas.pdf",
+                "page": 1
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "¿Qué significado tenían los metales en las culturas antiguas?",
+        "expected_evidence": [
+            {
+                "filename": "Conoce - Exhibiciones Temporales - No Todo lo Que Brilla es Oro - Mujeres en la Metalurgia.pdf",
+                "page": 2
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "¿Para qué se utilizaron los sellos de la cultura Jama-Coaque?",
+        "expected_evidence": [
+            {
+                "filename": "exhibiciones Pasadas - El Ornamento.pdf",
+                "page": 2
+            }
+        ]
+    }
+
+]

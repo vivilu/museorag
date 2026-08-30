@@ -16,17 +16,32 @@ class DocumentProcessor:
     def process(self, document: Document) -> Document:
 
         # Extract texto
-        text, pages = self.pdf_reader.read(document.path)
+        text, pages, pages_text = self.pdf_reader.read(document.path)
 
         # Without enought text, use OCR
         if len(text.strip()) < 50:
-            text = self.ocr_reader.read(document.path)
+            text, pages, pages_text = self.ocr_reader.read(
+                document.path
+            )
 
         # Clean texto
-        text = self.cleaner.clean(text)
+        cleaned_pages = []
+
+        for page_text in pages_text:
+
+            cleaned_text = self.cleaner.clean(
+                page_text
+            )
+
+            cleaned_pages.append(
+                cleaned_text
+            )
+
+        text = "\n".join(cleaned_pages)
 
         # Update documento
         document.text = text
         document.pages = pages
+        document.page_texts = pages_text
 
         return document
