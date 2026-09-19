@@ -7,7 +7,8 @@
                 "filename": "Educación - Tutoriales - Venus de Valdivia.pdf",
                 "page": 2
             }
-        ]
+        ],
+        "expected_answer": "La cultura Valdivia se desarrolló durante el periodo Formativo temprano (4000 a.C -1500 a.C)"
     },
     {
         "id": 2,
@@ -17,17 +18,19 @@
                 "filename": "exposiciones.pdf",
                 "page": 2
             }
-        ]
+        ],
+        "expected_answer": "La exhibición de tesoros del Monasterio de Santa Clara es permamente, se presenta los días martes, jueves y sábado."
     },
     {
         "id": 3,
-        "question": "¿Qué técnicas y materiales se usaron para fabricar los objetos de la colección?",
+        "question": "¿Qué materiales se usaron para fabricar los objetos de la colección?",
         "expected_evidence": [
             {
                 "filename": "Conoce - Colección Permanente - Mundos - Materiales y Tecnicas.pdf",
                 "page": 1
             }
-        ]
+        ],
+        "expected_answer": "Los materiales que se usaron para fabricar los objetos de la colección son: piedra, cerámica, metales, madera, hueso y concha."
     },
     {
         "id": 4,
@@ -37,17 +40,19 @@
                 "filename": "Conoce - Exhibiciones Temporales - No Todo lo Que Brilla es Oro - Mujeres en la Metalurgia.pdf",
                 "page": 2
             }
-        ]
+        ],
+        "expected_answer": "Los metales en las culturas antiguas tenían una función en los circuitos de intercambio, tanto de materia prima, como a nivel de objetos acabados y encuanto a su papel como vehículo de símbolos e ideas"
     },
     {
         "id": 5,
-        "question": "¿Para qué se utilizaron los sellos de la cultura Jama-Coaque?",
+        "question": "¿Para qué se utilizaron los sellos en la cultura Jama-Coaque?",
         "expected_evidence": [
             {
                 "filename": "exhibiciones Pasadas - El Ornamento.pdf",
                 "page": 2
             }
-        ]
+        ],
+        "expected_answer": "Los sellos de la cultura Jama-Coaque se utilizaron para se utilizaron para decorar textiles y maderas, y también para imprimir tatuajes corporales que funcionaban como marcadores de diferencias sociales."
     }
 
 ]
